@@ -1,0 +1,806 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #051622;
+   
+}
+body.centering{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    
+}
+
+input[type='password'] {
+    font-family: Verdana;
+    letter-spacing: 0.125em;
+}
+
+.nav-bar {
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: fixed;
+    color: #FFFFFF;
+    width: 100%;
+    background-color: #092034;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-bar-element {
+    float: right;
+}
+
+.nav-bar-element a {
+    font-weight: 600;
+    padding: 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-bar-element a:not(.blank-eff)::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: White;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-bar-element a:hover::before {
+    transform: scaleX(1);
+}
+
+button.red-button {
+    padding: 8px 16px;
+    border-radius: 12px;
+    background-color: #D90429;
+    color: WHITE;
+    border-color: #D90429;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform: background .5s;
+}
+
+button.red-button:hover {
+    border-color: #D90429;
+    background-color: #d9042700;
+
+}
+
+.error{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*----------------------------login page--------------------------------- */
+
+
+.login-card-container {
+    width: fit-content;
+    padding: 4rem;
+    background-color: #0a304a;
+    border-radius: 12px;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: auto;
+}
+.login-card h2{
+    color: white;
+    align-self: center;
+}
+.login-card a {
+    color: white;
+    text-decoration: none;
+    align-self: flex-end;
+
+}
+
+.login-card button {
+    align-self: center;
+    margin-top: 15px;
+}
+
+
+.forgotpass {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.login-card .input-group {
+    position: relative;
+}
+.input_group-container{
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+
+.login-card .input {
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+
+.login-card .user-label {
+    position: absolute;
+    left: 15px;
+    color: #e8e8e8;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-card .input:focus,
+input:valid {
+    outline: none;
+    border: 1.5px solid #1BA098;
+}
+
+.login-card .input:focus~label,
+.login-card .input:valid~label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #D90429;
+    padding: 0 .2em;
+    color: white;
+    font-weight: 500;
+}
+/*----------------------------login page--------------------------------- */
+
+/*----------------------------Home page--------------------------------- */
+body.homepage{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.slideshow{
+    position: relative;
+    margin-top: 3rem;
+}
+
+.movie-list-container{
+    position: relative;
+    background-color: #0a304a;
+    min-width: 80%;
+    height:60rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3.5rem;
+    padding-bottom: 5rem;
+    border-radius: 12px;
+    
+    
+}
+.movie-list-container a > h1{
+    float: top;
+    padding: .5rem;
+    color: white;
+    text-decoration: solid;
+    box-shadow: 1px 5px #D90429;
+
+}
+
+.movie-card-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    justify-content: center;
+}
+
+.movie-card{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    max-height: 330px;
+
+    
+}
+
+.movie-card img{
+    width: 100%;   
+    height: 100%;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 330px;
+    max-height: 330px;
+    border-radius: 12px;
+
+}
+
+.movie-detail-container{
+    display: flex;
+    flex-direction: column;
+    max-width: inherit;
+    position: absolute;
+    top: 0;
+    
+}
+.detail-container{
+    padding-top: 0.8em;
+    padding-left:0.5em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    text-overflow: ellipsis;
+}
+
+.genre-detail{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.genre-detail-1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    
+}
+
+.detail-container a{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    background-color: #404363;
+    opacity: .8;
+    padding: 8px;
+    margin-right: 1em;
+    border-radius: 12px;
+    max-width: inherit;
+    width:fit-content;
+
+}
+
+.detail-container a#title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 100%;
+
+
+}
+
+
+.movie-detail-card button{
+    justify-self: center;
+    margin: .8em;
+    gap: 1em;
+}
+
+.movie-detail-card{
+    overflow: hidden;
+    color:WHITE;
+    display: flex;
+    flex-direction: column;
+    max-width: inherit;
+    
+}
+
+.movie-detail-card button:hover{
+    background-color: #D90429;
+    -webkit-box-shadow: inset 1px 1px 10px #333;
+    -moz-box-shadow:    inset 1px 1px 10px #333;
+    box-shadow:         inset 1px 1px 10px #333;
+    
+}
+
+.movie-card .movie-detail-card{
+    display: none;
+}
+
+.movie-card:hover .movie-img{
+    opacity: 0.2;
+    border: 2px solid #D90429;
+}
+
+.movie-card:hover .movie-detail-card{
+    display: block;
+
+}
+
+button.morebutton{
+    margin-bottom: 1rem;
+    bottom: 0;
+    position: absolute;
+    width: 20%;
+    justify-self: center;
+    align-self: center;
+}
+
+/*----------------------------Home page--------------------------------- */
+
+/*----------------------------Reset Password--------------------------------- */
+.register-container{
+    background-color: #0a304a;
+    width: fit-content;
+    padding: 3.5rem;
+    border-radius: 12px;
+}
+
+.register-container h1{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+    color: White;
+    padding: .5rem;
+}
+
+.regis-form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+}
+.form-item-container,
+.form-input{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-item-container button.red-button{
+    justify-self: center;
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.form-item-subgroup{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+.form-item-container input{
+    border: 1.5px solid #9e9e9e;
+    border-radius: 6px;
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    line-height: 6ex;
+    background: none;
+    color: white;
+    padding: 10px;
+}
+
+.form-item-container input::placeholder{
+    color: rgba(245, 245, 245, 0.607);
+}
+
+.form-item-container label{
+    position: absolute;
+    top: 0.02ex;
+    z-index: 1;
+    left: 2em;
+    color: white;
+    padding: 0 5px;
+    background-color: #D90429;
+    border-radius: 12px;
+  }
+
+.form-item-container input:focus{
+    border: 1.5px solid #1BA098;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #0a304a;
+    padding: 4rem;
+    border-radius: 12px;
+    align-items: center;
+
+}
+
+.input-container h1{
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    color: WHITE;
+}
+
+.input-container form{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+
+.input-container form > button{
+    justify-self: center;
+    align-self: center;
+}
+
+.input-container a{
+    color: #FFFFFF;
+    min-height: 1ex;
+}
+
+.resetpassword-form-container{
+    background-color: #0a304a;
+    border-radius: 12px;
+    padding: 4rem;
+    color: white;
+}
+
+.resetpassword-form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3.5rem;
+    align-items: center;
+    
+}
+
+.resetpassword-form-container input{
+    border: 1.5px solid #9e9e9e;
+    border-radius: 6px;
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    line-height: 6ex;
+    background: none;
+    color: white;
+    padding: 10px;
+}
+
+.resetpassword-form-container input:focus{
+    border: 1.5px solid #1BA098;
+}
+/*----------------------------Reset Password--------------------------------- */
+
+
+/*-----------------------------buy ticket page ------------------------------*/
+.selected-movie-container{
+    background-color: #0a304a;
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 18px;
+    border-radius: 12px;
+    padding: 8em;
+
+
+}
+.movie-header-container{
+    align-self: center;
+    width: inherit;
+    border: 2px solid #D90429;
+}
+
+.seat-select-container{
+    align-self: center;
+    width: 100%;
+
+    border: 2px solid #D90429;
+}
+.selected-movie-detail-container img{
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 330px;
+    max-height: 330px;
+}
+
+
+.selected-movie-detail-container{
+    display: flex;
+    gap: 1em;
+    
+
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-corner {
+    background: none;
+    }
+.selected-movie-detail{
+    display: flex;
+    flex-direction: column;
+    color: WHITE;
+    font-weight:700;
+    gap: 1.5em;
+}
+.selected-movie-detail a{
+    border-radius: 12px;
+    width: fit-content;
+    padding: 8px 12px;
+    background-color: #404363;
+}
+.selected-movie-detail #description{
+    margin-top: 3%;
+
+    max-height: 30%;
+    white-space: Wrap;
+    overflow: scroll;
+    
+}
+
+.selected-movie-detail-container a#img-container{
+    padding: 12px;
+}
+
+.selected-time-show {
+    display:flex;
+    flex-direction: row;
+    gap:1em;
+    padding: 2em;
+    justify-content: center;
+}
+.selected-time-show a{
+    color:white
+}
+
+.select-time-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.select-time-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2em;
+}
+.select-time-form input{
+    align-self: center;
+}
+
+.select-time-form input[type=date]{
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.501);
+    padding: .8em 1.2em;
+    padding-left: calc(1em * 3.5);
+    border-radius: 100px;
+    transition: background .5s;
+    color: #D90429;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.time-wrapper{
+    background-color: #D90429;
+    padding: 12px;
+    border-radius: 12px;
+    color: WHITE;
+}
+
+.selected-time-show form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-self: center;
+    align-self: center;
+
+}
+
+
+
+input[type='radio']:checked{
+    background:none;
+    border: 2px solid #D90429;
+}
+
+
+.ticket-form select{
+    background: rgba(255, 255, 255, 0.501);
+    border-radius: 12px;
+    color: black;
+    font-weight: bold;
+    justify-content: center;
+}
+.ticket-form select-selected{
+    background: rgba(255, 255, 255, 0.501);
+    border-radius: 12px;
+}
+/*-----------------------------buy ticket page ------------------------------*/
+
+
+/*-----------------------------User Profile Page ---------------------------*/
+
+
+.profile-card-container{
+    background-color: #0a304a;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    color: WHITE;
+    border-radius: 12px;
+    position: relative;
+    
+}
+.user-profile-detail-container{
+    
+    display: inline-block;
+    gap:.8em;
+    border-right: 1px solid #D90429;
+    
+    
+}
+
+.user-profile-detail-container input{
+    color:WHite;
+    background-color: #405d63;
+    border-radius: 12px;
+    width: 100%;
+    font-weight: bold;
+    height: 2.4em;
+    
+    float: right;
+    
+}
+.user-profile-detail-container h3{
+    display: inline-block;
+    
+}
+
+.user-profile-detail-container2 input{
+    color:WHite;
+    background-color: #405d63;
+    border-radius: 12px;
+    width: fit-content;
+    font-weight: bold;
+    height: 2.4em;
+    text-align: center;
+}
+.user-profile-detail-container{
+    display: flex;
+    flex-direction: row;
+    gap:0.3em;
+    align-items: center;
+    padding: 0.5rem;
+}
+.user-profile-detail-container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    padding: inherit;
+    border-right: 1px solid #D90429;
+}
+.ticket-card{
+    background-color: #092034;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+    gap:.5em;
+    border-radius: 12px;
+    align-items:baseline;
+    align-content:center;
+}
+
+.ticket-container{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    border-radius: 12px;
+    overflow: scroll;
+    max-height: 50vh;
+    width: 50%;
+    float: left;
+}
+
+.profile-card-container{
+    display: flex;
+    flex-direction: row;
+    gap:1.5em;
+    width:60%;
+    max-height: 80vh;
+    justify-content:space-evenly;
+    overflow: scroll;
+
+    
+}
+
+.ticket-card button:disabled{
+    background: none;
+}
+/*-----------------------------User Profile Page ---------------------------*/
+
+/*----------------------------Show ticket details -------------------------*/
+.ticket-detail-card{
+    background-color: #0a304a;
+    padding: 2.5rem;
+    border-radius: 12px;
+    color: white;
+    width: fit-content;
+    white-space: nowrap;
+    margin-top: 2%;
+    
+}
+.ticket-detail-card form{
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    position: relative;
+    justify-content: center;
+}
+.ticket-details-container{
+    display: flex;
+    flex-direction: row;
+    gap:1em;
+}
+.ticket-detail-card label{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    font-weight: 600;
+    letter-spacing: .02em;
+    align-self: center;
+    
+}
+
+.ticket-detail-card input:not(.hidden-input){
+    border: 1.5px solid #9e9e9e;
+    border-radius: 6px;
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    line-height: 6ex;
+    background: none;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    width: fit-content;
+    text-align: right;
+    font-weight: bold;
+}
+.hidden-input{
+    display: none;
+}
+
+/*----------------------------Show ticket details -------------------------*/
+
+.qr-container{
+    background-color: #0a304a;
+    padding: 4.5rem;
+    border: 2px solid #D90429;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: WHITE;
+    border-radius: 12px;
+
+}
